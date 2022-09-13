@@ -61,7 +61,7 @@ export const fetchNetflixOriginals = () => {
     try {
       const request = await axios.get(
         // `/discover/tv?api_key=${process.env.API_KEY}&with_networks=213`
-        `/movie/now_playing?api_key=${process.env.API_KEY}&with_origin_country=IN&with_networks=213`
+        `/movie/now_playing?api_key=${process.env.API_KEY}&with_origin_country=US&with_networks=213`
       )
 
       dispatch({ type: FETCH_NETFLIX_ORIGINALS, payload: request })
@@ -75,7 +75,7 @@ export const fetchTrending = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/trending/all/day?api_key=${process.env.API_KEY}&with_origin_country=IN`
+        `/trending/all/day?api_key=${process.env.API_KEY}&with_origin_country=US`
       )
       dispatch({ type: FETCH_TRENDING, payload: request })
     } catch (error) {}
@@ -86,7 +86,7 @@ export const fetchTopRated = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/movie/top_rated?api_key=${process.env.API_KEY}&with_origin_country=IN`
+        `/tv/top_rated?api_key=${process.env.API_KEY}`
       )
       dispatch({ type: FETCH_TOP_RATED, payload: request })
     } catch (error) {}
@@ -97,7 +97,7 @@ export const fetchActionMovies = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=IN&with_genres=28`
+        `/discover/movie?api_key=${process.env.API_KEY}&with_genres=28`
       )
 
       dispatch({ type: FETCH_ACTION_MOVIES, payload: request })
@@ -109,7 +109,7 @@ export const fetchComedyMovies = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=IN&with_genres=35`
+        `/discover/movie?api_key=${process.env.API_KEY}&with_genres=35`
       )
 
       dispatch({ type: FETCH_COMEDY_MOVIES, payload: request })
@@ -121,7 +121,7 @@ export const fetchHorrorMovies = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=IN&with_genres=27`
+        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=US&with_genres=27`
       )
       dispatch({ type: FETCH_HORROR_MOVIES, payload: request })
     } catch (error) {}
@@ -132,7 +132,7 @@ export const fetchRomanceMovies = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=IN&with_genres=10749`
+        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=US&with_genres=10749`
       )
       dispatch({ type: FETCH_ROMANCE_MOVIES, payload: request })
     } catch (error) {}
@@ -143,7 +143,7 @@ export const fetchDocumentaries = () => {
   return async (dispatch) => {
     try {
       const request = await axios.get(
-        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=IN&with_genres=99`
+        `/discover/movie?api_key=${process.env.API_KEY}&with_origin_country=US&with_genres=99`
       )
       dispatch({ type: FETCH_DOCUMENTARIES, payload: request })
     } catch (error) {}

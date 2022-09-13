@@ -7,7 +7,12 @@ import { useViewport } from '../hooks/useViewport'
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
-const DisplayMovieRow = ({ title, isNetflixMovies, movies, selectMovieHandler }) => {
+const DisplayMovieRow = ({
+  title,
+  isNetflixMovies,
+  movies,
+  selectMovieHandler,
+}) => {
   const [windowDimensions] = useViewport()
   const { width } = windowDimensions
 

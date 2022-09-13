@@ -24,7 +24,7 @@ const MovieDetails = ({
       <p className='modal__info'>
         <span className='modal__rating'>Rating: {vote_average * 10}% </span>
         Release date: {release_date || first_air_date} Runtime:{' '}
-        {runtime || episode_run_time}m
+        {runtime || episode_run_time}
       </p>
       <p className='modal__episode'>
         {number_of_episodes ? ' Episodes: ' + number_of_episodes : ''}
@@ -33,15 +33,11 @@ const MovieDetails = ({
       <p className='modal__overview'>{overview}</p>
       <button
         className='modal__btn modal__btn--red'
-        onClick={() => console.log(`http://api.themoviedb.org/3/movie/157336/videos?api_key=###`)}
+        onClick={() => console.log(id)}
       >
         <PlayIcon className='modal__btn--icon' />
-        Play
+        Play trailer
       </button>
-      {/* <button className='modal__btn'>
-        <AddIcon className='modal__btn--icon' />
-        My List
-      </button> */}
     </div>
   )
 }
